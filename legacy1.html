@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Legacy Hotel Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+        }
+        .header {
+            background: rgba(34, 34, 34, 0.9);
+            color: #fff;
+            padding: 10px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+        .nav a.active, .nav a:hover {
+            color: #fec00f;
+            font-weight: bold;
+        }
+        .book-btn {
+            background: #fec00f;
+            border: none;
+            color: #222;
+            font-weight: bold;
+            padding: 10px 22px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .main-section {
+            background: linear-gradient(120deg, #8B2500 40%, #FFB347 100%);
+            min-height: 450px;
+            color:#fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px;
+            position: relative;
+        }
+        .main-left {
+            flex: 1;
+            padding-right: 40px;
+        }
+        .main-right {
+            flex: 0 0 340px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .main-right img {
+            width: 320px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 8px 34px rgba(30,30,65,0.15);
+            background: #fff;
+        }
+        .promo-content h1 {
+            font-size: 44px;
+            margin-bottom: 10px;
+        }
+        .promo-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+        .reserve-btn {
+            padding: 10px 28px;
+            border: none;
+            border-radius: 4px;
+            background:  #fec00f;
+            color: #222;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .booking-form {
+            position: relative;
+            z-index: 2;
+            margin-top: -60px;
+            background: #fff;
+            border-radius: 16px;
+            padding: 18px 24px;
+            box-shadow: 0 8px 24px rgba(30,30,65,0.13);
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            max-width: 700px;
+        }
+        .booking-form input,
+        .booking-form select {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #e2e2e2;
+            font-size: 16px;
+            min-width: 130px;
+        }
+        .booking-form .check-btn {
+            background: #fec00f;
+            border: none;
+            color: #222;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        @media (max-width: 900px) {
+            .main-section {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+            .main-left {
+                padding-right: 0;
+            }
+            .main-right {
+                justify-content: center;
+                margin-top: 20px;
+            }
+            .main-right img {
+                width: 100%;
+                max-width: 340px;
+            }
+            .promo-content h1 { font-size: 32px; }
+            .booking-form { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">LEGACY</div>
+        <nav class="nav">
+            <a href="#" class="active">HOME</a>
+            <a href="#">ROOMS</a>
+            <a href="#">PAGES</a>
+            <a href="#">BLOG</a>
+            <a href="#">ABOUT US</a>
+            <a href="#">CONTACT US</a>
+            <button class="book-btn">BOOK NOW</button>
+        </nav>
+    </div>
+
+    <section class="main-section">
+        <div class="main-left promo-content">
+            <h1>Spend Quality Holidays With Us</h1>
+            <p>Legacy room booking is the startup idea to book rooms according to your need and with best ratings in a particular location.</p>
+            <button class="reserve-btn">RESERVE NOW</button>
+        </div>
+        <div class="main-right">
+            <img src="WhatsApp-Image-2025-10-26-at-11.43.56-AM.jpg" alt="25% OFF Holiday Offer" />
+        </div>
+    </section>
+
+    <form class="booking-form">
+        <input type="date" placeholder="Arrival Date" required>
+        <input type="date" placeholder="Departure Date" required>
+        <select>
+            <option>ADULTS</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3+</option>
+        </select>
+        <select>
+            <option>CHILDREN</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2+</option>
+        </select>
+        <button class="check-btn" type="submit">CHECK AVAILABILITY</button>
+    </form>
+</body>
+  <!-- Search by Location Section at Bottom -->
+<div style="background:#fff; margin:40px auto 0 auto; max-width:540px; padding:24px 18px 28px 18px; border-radius:12px; box-shadow:0 6px 16px rgba(30,30,65,0.13); text-align:center;">
+    <h2 style="font-size:22px; margin-bottom:14px; color:#8B2500;">Find Hotels by Location</h2>
+    <form id="location-search-form" style="display:flex; gap:10px; justify-content:center;">
+        <input type="text" id="location-input" placeholder="Enter city or location" 
+            style="padding:10px; border-radius:6px; border:1px solid #e2e2e2; font-size:15px; min-width:170px;">
+        <button type="submit" style="background:#fec00f; border:none; color:#222; font-weight:bold; padding:10px 22px; border-radius:6px; font-size:15px; cursor:pointer;">
+            SEARCH
+        </button>
+    </form>
+    <div id="location-search-result" style="margin-top:12px; color:#111; font-size:16px;"></div>
+</div>
+  <!-- Special Thanks Section -->
+<div style="text-align:center; margin:38px auto 0 auto;">
+    <span style="font-size:2.2rem; font-weight:bold; color:#8B2500; letter-spacing:2px;">
+        SPECIAL THANKS TO MR.P. VINAY KUMAR
+    </span>
+</div>
+
+<!-- Customer Support Floating Button -->
+<a href="tel:+918688921799" title="Call Customer Support" 
+   style="
+      position: fixed; 
+      bottom: 28px; 
+      right: 28px; 
+      background: #fec00f; 
+      color: #222; 
+      padding: 14px 20px; 
+      border-radius: 50px; 
+      box-shadow: 0 4px 20px rgba(30,30,65,0.13);
+      font-weight: bold; 
+      font-size: 16px; 
+      display: flex; 
+      align-items: center; 
+      text-decoration: none;
+      z-index: 9999;">
+   <span style="margin-right:8px;">📞</span> Customer Support
+</a>
+<!-- Special Partners Section -->
+<div style="background:#f8f8f8; margin:40px auto 0 auto; max-width:450px; padding:18px 12px 20px 12px; border-radius:10px; box-shadow:0 4px 12px rgba(30,30,65,0.10); text-align:center;">
+    <h3 style="font-size:20px; color:#8B2500; margin-bottom:10px;">Special Partners</h3>
+    <div style="display:flex; justify-content:center; gap:30px; margin-top:8px;">
+        <!-- Instagram -->
+        <a href="https://instagram.com/" target="_blank" title="Instagram" style="display:inline-block;">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="width:36px; height:36px;">
+        </a>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/918688921799" target="_blank" title="WhatsApp" style="display:inline-block;">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" style="width:36px; height:36px;">
+        </a>
+        <!-- Facebook -->
+        <a href="https://facebook.com/" target="_blank" title="Facebook" style="display:inline-block;">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" style="width:36px; height:36px;">
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/" target="_blank" title="LinkedIn" style="display:inline-block;">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" style="width:36px; height:36px;">
+        </a>
+    </div>
+</div>
+
+</html>
